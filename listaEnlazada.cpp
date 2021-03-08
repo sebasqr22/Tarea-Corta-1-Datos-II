@@ -20,7 +20,7 @@ class listaEnlazada{
             actual = NULL;
             temp = NULL;
         };
-        void Insertar(int nuevoNum){
+        void Agregar(int nuevoNum){
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
             puntero -> num = nuevoNum;

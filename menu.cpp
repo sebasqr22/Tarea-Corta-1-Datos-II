@@ -1,12 +1,14 @@
 #include <cstdlib>
 #include <iostream>
 #include "listaEnlazada.cpp"
+#include "collector.cpp"
 
 using namespace std;
 
 class menuInicio{
     private:
         listaEnlazada listaUtilizar;
+        collector newCollector;
     public:
         menuInicio(){};
         void iniciarMenu(){
@@ -22,7 +24,7 @@ class menuInicio{
                         cout << "\n" << "Ingrese un numero a agregar a la lista: ";
                         cin >> nuevoNum;
                         cout << endl;
-                        listaUtilizar.Insertar(nuevoNum);
+                        listaUtilizar.Agregar(nuevoNum);
                         listaUtilizar.ImprimirLista();
                         break;
 
@@ -38,6 +40,22 @@ class menuInicio{
                     case 3:
                         cout << "\n" << "Gracias por usar el progama :)";
                         exit(1);
+                    
+                    case 4:
+                        int agregar;
+                        cout << "\n" << "Valor a agregar a collector: ";
+                        cin >> agregar;
+                        cout << "\n";
+                        newCollector.Insertar(agregar);
+                        break;
+
+                    case 5:
+                        int del;
+                        cout << "\n" << "Valor a eliminar a collector: ";
+                        cin >> del;
+                        cout << "\n";
+                        newCollector.Eliminar(del);
+                        break;
 
                     default:
                         cout << "\n" << "Por favor seleccione alguna opcion existente...\n";
