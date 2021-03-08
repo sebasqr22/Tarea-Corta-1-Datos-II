@@ -23,14 +23,11 @@ class listaEnlazada{
         void Insertar(int nuevoNum){
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
-            puntero -> num;
+            puntero -> num = nuevoNum;
 
             if(primero != NULL){
-                actual = primero;
-                while(actual -> siguiente != NULL){
-                    actual = actual -> siguiente;
-                }
-                actual -> siguiente = puntero;
+                puntero -> siguiente = primero;
+                primero = puntero;
             }
             else{
                 primero = puntero;
@@ -59,11 +56,11 @@ class listaEnlazada{
         };
         void ImprimirLista(){
             actual = primero;
-            cout << "[" << endl;
+            cout << "---" << endl;
             while(actual != NULL){
                 cout << actual -> num << endl;
                 actual = actual -> siguiente;
             }
-            cout << "]" << endl;
+            cout << "---" << endl;
         };
 };
