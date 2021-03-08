@@ -1,3 +1,5 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 class lista{
     private:
         typedef struct nodo{
@@ -10,8 +12,11 @@ class lista{
         ptrNode temp;
 
     public:
-        lista();
+        lista(){
+            
+        };
         void Insertar(int nuevoNum);
         void Eliminar(int delNum);
         void ImprimirLista();
 };
+#endif
