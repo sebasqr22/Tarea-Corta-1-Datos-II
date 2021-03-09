@@ -21,4 +21,35 @@ class collector{
                 }
             }
         };
+        bool Valorar(){ // hay espacios reciclados o no
+            bool encontrado = false;
+            for(int i=0; i< pos; i++){
+                if(arr[i] != NULL){
+                    encontrado = true;
+                    break;
+                }
+            }
+            if(encontrado == true){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+        int* getDir(){
+            for(int i = 0; i < pos; i++){
+                if(arr[i] != NULL){
+                    int* copy = arr[i];
+                    arr[i] = NULL;
+                    return copy;
+                }
+            }
+        };
+        void imprimir(){
+            cout << "\n" << "^^^^^";
+            for(int i = 0; i<pos; i++){
+                cout << "\n" << arr[i];
+            }
+            cout << "\n" << "^^^^^";
+        };
 };

@@ -5,10 +5,8 @@
 
 using namespace std;
 
-//void * operator new(size_t size){
-    //ptrNode puntero = new nodo;
-    //puntero -> num = malloc(size);
-//}
+
+
 class listaEnlazada{
     private:
 
@@ -24,6 +22,12 @@ class listaEnlazada{
             temp = NULL;
         };
         void Agregar(int nuevoNum){
+            if(nuevoCollector.Valorar() == true){
+
+            }
+            else{
+
+            }
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
             puntero -> num = nuevoNum;
@@ -61,9 +65,26 @@ class listaEnlazada{
             actual = primero;
             cout << "---" << endl;
             while(actual != NULL){
-                cout << actual -> num << endl;
+                cout << actual -> num << " : "<< &(actual-> num) << endl;
                 actual = actual -> siguiente;
             }
             cout << "---" << endl;
+        };
+        bool getCollector(){
+            if(nuevoCollector.Valorar() == true){
+                return true;
+            }
+            else{
+                return false;
+            }
+        };
+        int * getDir(){
+            return nuevoCollector.getDir();
+        };
+        void agregarCollector(int* dir){
+            nuevoCollector.Insertar(dir);
+        };
+        void imprimirCollector(){
+            nuevoCollector.imprimir();
         };
 };
