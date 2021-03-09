@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "node.cpp"
-#include "collector.cpp"
+#include "newCollector.cpp"
 
 using namespace std;
 
@@ -9,12 +9,6 @@ using namespace std;
     //ptrNode puntero = new nodo;
     //puntero -> num = malloc(size);
 //}
-
-void operator delete(void *puntero, collector usando, int delDir){
-    usando.Insertar(delDir);
-    free(puntero);
-}
-
 class listaEnlazada{
     private:
 
@@ -30,9 +24,6 @@ class listaEnlazada{
             temp = NULL;
         };
         void Agregar(int nuevoNum){
-            if(nuevoCollector.Validar() == true){
-                int espacio = nuevoCollector.getEspacio();
-            }
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
             puntero -> num = nuevoNum;
