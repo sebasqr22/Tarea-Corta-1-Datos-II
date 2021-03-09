@@ -1,18 +1,26 @@
 #include <iostream>
 #include <cstdlib>
+#include "node.cpp"
 
 using namespace std;
 
+//void * operator new(size_t size){
+    //ptrNode puntero = new nodo;
+    //puntero -> num = malloc(size);
+//}
+
+void operator delete(void * puntero, collector usando){
+    usando.Insertar(puntero);
+    free(puntero);
+}
+
 class listaEnlazada{
     private:
-        typedef struct nodo{
-            int num;
-            nodo* siguiente;
-        }* ptrNode;
 
         ptrNode primero;
         ptrNode actual;
         ptrNode temp;
+        collector nuevoCollector;
 
     public:
         listaEnlazada(){
@@ -21,6 +29,9 @@ class listaEnlazada{
             temp = NULL;
         };
         void Agregar(int nuevoNum){
+            if(nuevoCollector.Validar() == true){
+                int espacio = nuevoCollector.getEspacio();
+            }
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
             puntero -> num = nuevoNum;
