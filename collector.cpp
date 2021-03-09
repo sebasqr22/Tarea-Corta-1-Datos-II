@@ -5,14 +5,14 @@ using namespace std;
 
 class collector{
     private:
-        int arr[10];
+        int* arr[10];
         int sizeArray;
 
     public:
         collector(){
             sizeArray = 0;
         };
-        void Insertar(int direccion){
+        void Insertar(int* direccion){
             arr[sizeArray] = direccion;
             sizeArray ++;
             cout << "---" << endl;
@@ -21,10 +21,10 @@ class collector{
             }
             cout << "---" << endl;
         };
-        void Eliminar(int direccion){
+        void Eliminar(int* direccion){
             for(int i = 0; i < sizeArray; i++){
                 if(arr[i] == direccion){
-                    arr[i] = 0;
+                    arr[i] = NULL;
                     break;
                 }
             }

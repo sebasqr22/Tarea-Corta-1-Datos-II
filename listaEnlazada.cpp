@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "node.cpp"
+#include "collector.cpp"
 
 using namespace std;
 
@@ -9,8 +10,8 @@ using namespace std;
     //puntero -> num = malloc(size);
 //}
 
-void operator delete(void * puntero, collector usando){
-    usando.Insertar(puntero);
+void operator delete(void *puntero, collector usando, int delDir){
+    usando.Insertar(delDir);
     free(puntero);
 }
 
