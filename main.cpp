@@ -7,8 +7,9 @@ using namespace std;
 listaEnlazada listaUtilizar;
 
 void *operator new(size_t size){
-    cout << "Entro";
+    cout << "Usar recciclado: " << listaUtilizar.getCollector() << "\n";
     if(listaUtilizar.getCollector() == true){
+        cout << "\n" << "---Usando-espacio-reciclado---";
         void *ptr = listaUtilizar.getDir();
         return ptr;
     }
@@ -27,7 +28,7 @@ int main(){
     while(true){
         int num;
         cout << "\n" << "Por favor seleccione una opcion: \n" << "1. Agregar un numero a la lista\n" 
-            << "2. ELiminar numero de la lista\n" << "3. Imprimir Collector\n" << "4. Salir\n";
+            << "2. Eliminar numero de la lista\n" << "3. Imprimir Collector\n" << "4. Imprimir Lista Enlazada\n" << "5. Salir\n";
         cout << "Opcion: ";
         cin >> num;
         switch (num){
@@ -54,6 +55,10 @@ int main(){
                 break;
 
             case 4:
+                listaUtilizar.ImprimirLista();
+                break;
+            
+            case 5:
                 cout << "\n" << "Gracias por usar el progama :)";
                 exit(1);
 
@@ -61,13 +66,4 @@ int main(){
                 cout << "\n" << "Por favor seleccione alguna opcion existente...\n";
         }
     }
-    
-    
-
-
-    /**
-    menuInicio nuevoMenu;
-    nuevoMenu.iniciarMenu();
-    return 0;
-    **/
 }

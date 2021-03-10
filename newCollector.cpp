@@ -24,7 +24,7 @@ class collector{
         bool Valorar(){ // hay espacios reciclados o no
             bool encontrado = false;
             for(int i=0; i< pos; i++){
-                if(arr[i] != NULL){
+                if(arr[i] != 0){
                     encontrado = true;
                     break;
                 }
@@ -38,10 +38,11 @@ class collector{
         };
         int* getDir(){
             for(int i = 0; i < pos; i++){
-                if(arr[i] != NULL){
+                if(arr[i] != 0){
                     int* copy = arr[i];
-                    arr[i] = NULL;
+                    arr[i] = 0;
                     return copy;
+                    break;
                 }
             }
         };

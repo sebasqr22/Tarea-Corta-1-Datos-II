@@ -22,12 +22,6 @@ class listaEnlazada{
             temp = NULL;
         };
         void Agregar(int nuevoNum){
-            if(nuevoCollector.Valorar() == true){
-
-            }
-            else{
-
-            }
             ptrNode puntero = new nodo;
             puntero -> siguiente = NULL;
             puntero -> num = nuevoNum;
@@ -35,6 +29,7 @@ class listaEnlazada{
             if(primero != NULL){
                 puntero -> siguiente = primero;
                 primero = puntero;
+                cout << "Primero despues: " << primero << endl;
             }
             else{
                 primero = puntero;
