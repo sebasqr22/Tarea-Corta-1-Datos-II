@@ -36,10 +36,10 @@ class listaEnlazada{
             }
         };
         void Eliminar(int delNum){
-            ptrNode puntero = NULL;
-            temp = primero;
+            ptrNode puntero = NULL;//este es el que se va a borrar
+            temp = primero; // se refiere al elemento anterior al actual
             actual = primero;
-
+            
             while(actual != NULL && actual -> num != delNum){
                 temp = actual;
                 actual = actual -> siguiente;
@@ -48,13 +48,17 @@ class listaEnlazada{
                 cout << delNum << " NO esta en la lista\n";
                 delete puntero;
             }
-            else{
+            else{ //REVISAR
+                if(actual == primero){
+                    primero = actual -> siguiente;
+                }
                 puntero = actual;
                 actual = actual -> siguiente;
                 temp -> siguiente = actual;
                 delete puntero;
                 cout << "El numero " << delNum << " fue eliminado...\n";
             }
+            
         };
         void ImprimirLista(){
             actual = primero;

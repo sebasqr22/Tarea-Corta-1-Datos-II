@@ -7,7 +7,7 @@ using namespace std;
 listaEnlazada listaUtilizar;
 
 void *operator new(size_t size){
-    cout << "Usar recciclado: " << listaUtilizar.getCollector() << "\n";
+    //cout << "Usar recciclado: " << listaUtilizar.getCollector() << "\n";
     if(listaUtilizar.getCollector() == true){
         cout << "\n" << "---Usando-espacio-reciclado---";
         void *ptr = listaUtilizar.getDir();
@@ -21,7 +21,7 @@ void *operator new(size_t size){
 
 void operator delete(void *ptr){
     listaUtilizar.agregarCollector((int*) ptr);
-    free(ptr);
+
 }
 
 int main(){
